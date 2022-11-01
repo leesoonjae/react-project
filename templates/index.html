@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <style>
+        .mybox {
+            width: 95%;
+            max-width: 700px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px lightblue;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            show_study()
+        });
+
+        function show_study() {
+            $.ajax({
+                type: "GET",
+                url: "/study",
+                data: {},
+                success: function (response) {
+                    console.log('성공')
+                    let rows = response['good']
+                    for (let i = 0; i < rows.length; i++) {
+                        let name = rows[i]['name']
+                        let comment = rows[i]['comment']
+                        let num = rows[i]['num']
+                        let done = rows[i]['done']
+
+                        let temp_html = ``
+                        if (done == 0) {
+                            temp_html = `<li>
+                                            <h2>${name}</h2>
+                                            <h2>✅ ${comment}</h2>
+                                            <button onclick="done_study(${num})" type="button" class="btn btn-outline-primary">완료!</button>
+                                        </li>`
+                        }
+                        $('#comment-list').append(temp_html)
+                    }
+                }
+            });
+        }
+
+        function save_study() {
+            let name = $('#name').val()
+            let comment = $('#comment').val()
+
+            $.ajax({
+                type: "POST",
+                url: "/study",
+                data: {name_give: name, comment_give: comment},
+                success: function (response) {
+                    alert(response["msg"])
+                    window.location.reload()
+                }
+            });
+        }
+
+        function done_study(num) {
+            $.ajax({
+                type: "POST",
+                url: "/study/done",
+                data: {num_give: num},
+                success: function (response) {
+                    alert(response["msg"])
+                    window.location.reload()
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="/templates/" class="card-img-top" alt="img" width="350" height="450">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                <p>name:이순재</p>
+                <p>age:28</p>
+                <p>e-mail:sjl1029@naver.com</p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                    p>1.[팀]과 [자신]에 대한 설명 및 mbti</p>
+                <p>2.객관적으로 살펴본 자신의 장점</p>
+                <p>3.협업을 하는 과정에서의 자신의 스타일</p>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mybox">
+    <div class="mybucket">
+        <input id="name" class="form-control" type="text" placeholder="이름">
+        <input id="comment" class="form-control" type="text" placeholder="이루고 싶은 것을 입력하세요">
+        <button onclick="save_study()" type="button" class="btn btn-outline-primary">기록하기</button>
+    </div>
+</div>
+<div class="mybox" id="comment-list">
+</div>
+</body>
+</html>
