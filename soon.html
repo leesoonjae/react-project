@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <title>칠성사이다</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Nanum+Pen+Script&family=Rubik:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/soon.css" />
+    </head>
+    <script src="../static/soon.js"></script>
+    <body>
+    <div class="paragraph">
+        <h1>칠성사이다</h1>
+        <p>사이다처럼 톡톡 튀는 예비 개발자들이 모인,<br/>칠성사이다팀입니다.</p>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="main">
+                    <div class="box" style="background: #BDBDBD;">
+                        <img class="profile" src="../static/soon.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">프로필</h5>
+                        <p class="card-text">
+                        <div id="teamName">이름 : 이순재</div>
+                        <div>생년월일 : 1995.10</div>
+                        <div>e-mail : sjl1029@naver.com</div>
+                        <div>블로그 : <a href="https://sjl1029.tistory.com/">https://sjl1029.tistory.com/</a></div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="colton">
+                <div class="cardtwo">
+                    <div class="colton-body">
+                        <h2 class="colton-title">TMI</h2>
+                        <p class="colton-text">
+                        <div>1. 거주지역 중랑구 어딘가</div>
+                        <div>2. 독서를 좋아함</div>
+                        <div>3. 전공자는 아니지만 열심히 노력하는 사람</div>
+                        <div>4. 코딩은 처음이지만 습득 능률은 좋다고 생각함</div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mybox">
+            <div class="mycom">
+                <input id="writer" type="text" placeholder="이름">
+                <input id="comment" type="text" placeholder="댓글을 적어주세요">
+                <button onclick="save_comment()" type="button" class="btn btn-outline-primary">기록하기</button>
+            </div>
+        </div>
+            <div class="mybox" id="comment-list">
+            </div>
+        </div>
+    </body>
+</html>
