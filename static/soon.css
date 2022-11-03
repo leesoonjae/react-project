@@ -1,6 +1,9 @@
 * {
     font-family: 'Lato', sans-serif;
 }
+.rod {
+
+}
 .paragraph {
     background-image: url("https://blog.kakaocdn.net/dn/qmheK/btqESgxoMRc/lO2wSF6uSH0QKW8uHjsp20/img.jpg");
     background-repeat: no-repeat;
@@ -8,7 +11,7 @@
     background-attachment: fixed;
     margin-bottom: 50px;
     text-align: center;
-    color: black;
+    color: honeydew;
 }
 .box {
     width: 150px;
@@ -40,7 +43,7 @@
     align-items: center;
     max-width: 350px;
     width: 95%;
-    color: white;
+    color: honeydew;
 }
 .card-body {
     margin-top: 50px;
@@ -72,7 +75,8 @@
     width: 95%;
     max-width: 900px;
     height: 500px;
-    color: white;
+    color: honeydew;
+    font-size : 25px;
 }
 .mybox {
     height: 100%;
