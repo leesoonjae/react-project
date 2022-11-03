@@ -15,9 +15,10 @@ $(document).ready(function () {
                         let comment = rows[i]['comment']
                         let num = rows[i]['num']
                         let done = rows[i]['done']
+                        let teamName = rows[i]['teamName']
 
                         let temp_html = ``
-                        if (done == 0) {
+                        if (teamName == document.getElementById('teamName').innerText && done == 0) {
                             temp_html = `<li>
                                     <h2>${name}</h2>
                                     <h2>✅ ${comment}</h2>
@@ -33,11 +34,12 @@ $(document).ready(function () {
         function save_study() {
             let name = $('#name').val()
             let comment = $('#comment').val()
+            let teamName = document.getElementById('teamName').innerText
 
             $.ajax({
                 type: "POST",
                 url: "/study",
-                data: {name_give: name, comment_give: comment},
+                data: {name_give: name, comment_give: comment, teamName_give : teamName},
                 success: function (response) {
                     alert(response["msg"])
                     window.location.reload()
