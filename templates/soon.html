@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <title>칠성사이다</title>
+    <<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/soon.css" />
+    </head>
+    <script src="../static/index.js"></script>
+    <body>
+    <div class="paragraph">
+        <h1>칠성사이다</h1>
+        <p>사이다처럼 톡톡 튀는 예비 개발자들이 모인,<br/>칠성사이다팀입니다.</p>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col">
+                <div class="main">
+                    <div class="box" style="background: #BDBDBD;">
+                        <img class="profile" src="../static/soon.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">프로필</h5>
+                        <p class="card-text">
+                        <div>이름 : 이순재</div>
+                        <div>생년월일 : 1995.10</div>
+                        <div>e-mail : sjl1029@naver.com</div>
+                        <div>블로그 : <a href="https://sjl1029.tistory.com/">https://sjl1029.tistory.com/</a></div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="colton">
+                <div class="cardtwo">
+                    <div class="colton-body">
+                        <h5 class="colton-title">자기소개</h5>
+                        <p class="colton-text">
+                        <div>1. 서울 중랑구에 거주중인 이순재라고 합니다.</div>
+                        <div>2. 제 장점은 새로운걸 배울 때 습득을 잘할수 있습니다.</div>
+                        <div>3. 모르는 정보를 잘 물어보며 맡은 일을 최선을 다해 수행합니다.</div>
+                        <div>4. 저의 팀 칠성사이다는 협업을 하는데 역할분담을 잘하며 우리가 추구하는
+                                궁극적인 목표는 프로젝트를 수행하면서 실력향상을 시키는 것입니다.</div>
+                        <div>5. 우리 팀의 약속은 모르는 사실을 숨기지 않고 팀원끼리 도움을 주며 프로젝트를 완성시키는 것입니다.</div>
+                        <div>6. 윤준호님 블로그, 임홍구님 블로그, 조용현님 블로그, 허다은님 블로그</div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mybox">
+            <div class="mycom">
+                <input id="name" type="text" placeholder="이름">
+                <input id="comment" type="text" placeholder="댓글을 적어주세요">
+                <button onclick="save_study()" type="button" class="btn btn-outline-primary">기록하기</button>
+            </div>
+        </div>
+            <div class="mybox" id="comment-list">
+            </div>
+        </div>
+    </body>
+</html>
