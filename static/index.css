@@ -1,0 +1,38 @@
+    .container {
+        width: 800px;
+        margin: 100px auto 200px auto;
+      }
+
+      .paragraph {
+        margin-top: 50px;
+        margin-right: 150px;
+        margin-bottom: 200px;
+        text-align: right;
+      }
+
+      .item,
+      .item-center {
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .desc-center {
+        width: 300px;
+        height: 500px;
+        margin-left: 100px;
+      }
+
+      .desc {
+        width: 300px;
+        height: 500px;
+        margin-left: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .secondImg {
+        margin-top: 150px;
+      }
