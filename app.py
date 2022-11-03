@@ -17,6 +17,7 @@ def introduce_index():
 def study_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
+    teamName_receive = request.form['teamName_give']
 
     comment_list = list(db.study.find({}, {'_id': False}))
     count = len(comment_list) + 1
@@ -25,7 +26,9 @@ def study_post():
         'num':count,
         'name':name_receive,
         'comment':comment_receive,
-        'done':0
+        'done':0,
+        'teamName': teamName_receive,
+        'soon': 0
     }
     db.study.insert_one(doc)
 
