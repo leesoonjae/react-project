@@ -8,6 +8,10 @@ db = client.dbsparta
 @app.route('/')
 def home():
    return render_template('index.html')
+@app.route('/soon')
+def introduce_index():
+   return render_template('soon.html')
+
 
 @app.route("/study", methods=["POST"])
 def study_post():
