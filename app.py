@@ -28,7 +28,7 @@ def introduce_soon():
 def comment_post():
     comment_receive = request.form['comment_give']
     writer_receive = request.form['writer_give']
-    soonjae_receive = request.form['soonjae_give']
+    teamName_receive = request.form['teamName_give']
 
     comment_list = list(db.comment.find({}, {'_id': False}))
     count = len(comment_list) + 1
@@ -39,7 +39,7 @@ def comment_post():
         'del': 0,
         'writer': writer_receive,
         'name': 0,
-        'soonjae': soonjae_receive
+        'teamName': teamName_receive
     }
     db.comment.insert_one(doc)
 

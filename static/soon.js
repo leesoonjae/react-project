@@ -15,10 +15,10 @@ $(document).ready(function () {
                         let num = rows[i]['num']
                         let del = rows[i]['del']
                         let writer = rows[i]['writer']
-                        let soonjae = rows[i]['soonjae']
+                        let teamName = rows[i]['teamName']
 
                         let temp_html = ``
-                        if (soonjae == document.getElementById('soonjae').innerText && del == 0) {
+                        if (teamName == document.getElementById('soonjae').innerText && del == 0) {
                             temp_html = `<li>
                                     <h2>${writer}</h2>
                                     <h2>✅ ${comment}</h2>
@@ -34,12 +34,12 @@ $(document).ready(function () {
         function save_comment() {
             let writer = $('#writer').val()
             let comment = $('#comment').val()
-            let soonjae = document.getElementById('soonjae').innerText
+            let teamName = document.getElementById('soonjae').innerText
 
             $.ajax({
                 type: "POST",
                 url: "/comment",
-                data: {writer_give: writer, comment_give: comment, soonjae_give : soonjae},
+                data: {writer_give: writer, comment_give: comment, teamName_give : teamName},
                 success: function (response) {
                     alert(response["msg"])
                     window.location.reload()
